@@ -17,7 +17,8 @@ div.style.display='none'
 addressForm.addEventListener('submit',(e)=>{
     e.preventDefault()//prevents refresh of form
     const location=search.value
-    fetch(`http://localhost:3000/weather?address=${location}`).then(response=>{
+    // fetch(`http://localhost:3000/weather?address=${location}`).then(response=>{ //local
+    fetch(`/weather?address=${location}`).then(response=>{ //heroku
     response.json().then(data=>{
         if(data.error){
             err.textContent=data.error

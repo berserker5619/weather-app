@@ -6,6 +6,7 @@ const geoCode = require("./utils/geoCode")
 const foreCast = require("./utils/forecast")
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //define paths for Express config
 const publicDirPath = path.join(__dirname, '../public')
@@ -101,11 +102,11 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404page', {
         title: '404',
-        message: '404 error->Page not found',
+        message: '404 error -> Page not found',
         name: 'Nizam'
     })
 })
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000...");
+app.listen(port, () => {
+    console.log('Server running on PORT : '+port);
 })
