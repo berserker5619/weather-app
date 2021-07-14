@@ -5,21 +5,26 @@
     <title>Weather</title>
     <link rel="icon" href="/assets/icon.jpeg">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div class="main-content">
         {{>header}}
-        <p>Use this site to get your Weather!</p>
-        <form>
-            <input required type="text" name="address" id="address" placeholder="Enter your address">
-            <button type="submit">Search</button>
+        <p style="text-decoration:underline;">Use this site to get your Weather!</p>
+        <form class="example">
+            <input required type="text" name="address" id="address" placeholder="Enter your location">
+            <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <p id="error"></p>
         <div id="weather_report" style="color: rgb(48, 41, 41);">
         <strong>Location:</strong><p id="location"></p>
         <strong>Weather:</strong><p id="weather"></p>
         <strong>Temperature:</strong><p id="temperature"></p>
+        <strong>Feels like:</strong><p id="feelslike"></p>
         </div>
     </div>
     <div>{{>footer}}</div>

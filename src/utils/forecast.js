@@ -12,7 +12,8 @@ const foreCast = (lattitude, longitude, callback) => {
             const temperature = body.current.temperature
             const weather_descriptions = body.current.weather_descriptions[0]
             const precipitation = body.current.precip
-            callback(undefined, { weather_descriptions: weather_descriptions, temperature: temperature, precipitation: precipitation })
+            const feelslike=body.current.feelslike
+            callback(undefined, { weather_descriptions, temperature, precipitation,feelslike})
         }
     })
 

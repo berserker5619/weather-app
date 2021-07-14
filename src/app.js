@@ -32,7 +32,7 @@ app.get('', (req, res) => {//handlebar template
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About',
-        name: 'Nexus'
+        name: 'Nizam'
     })
 })
 
@@ -58,7 +58,7 @@ app.get('/weather', (req, res) => {
         }
         else {
             setTimeout(() => {
-                foreCast(lattitude, longitude, (err, { weather_descriptions, temperature, precipitation } = {}) => {
+                foreCast(lattitude, longitude, (err, { weather_descriptions, temperature, precipitation ,feelslike} = {}) => {
                     if (err) {
                         return res.send({
                             error: err
@@ -71,7 +71,8 @@ app.get('/weather', (req, res) => {
                             longitude,
                             weather_descriptions,
                             temperature,
-                            precipitation
+                            precipitation,
+                            feelslike
                         })
                     }
                 })

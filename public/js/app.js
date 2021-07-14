@@ -5,13 +5,10 @@ const err=document.querySelector('#error')
 const loc=document.querySelector('#location')
 const weather=document.querySelector('#weather')
 const temp=document.querySelector('#temperature')
+const feelslike=document.querySelector('#feelslike')
 
 let div=document.getElementById("weather_report")
 
-err.textContent=""
-loc.textContent=""
-weather.textContent=""
-temp.textContent=""
 div.style.display='none'
 
 addressForm.addEventListener('submit',(e)=>{
@@ -26,7 +23,8 @@ addressForm.addEventListener('submit',(e)=>{
         else{
             loc.textContent=data.place_name
             weather.textContent=data.weather_descriptions
-            temp.textContent=data.temperature+" F"
+            temp.textContent=data.temperature+" \xB0F"
+            feelslike.textContent=data.feelslike+" \xB0F"
             div.style.display='block'
         }
     })
